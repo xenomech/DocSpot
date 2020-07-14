@@ -4,13 +4,20 @@ import 'package:sreevaidyanatham/Models/user.dart';
 class AuthService {
   final FirebaseAuth _auth = FirebaseAuth.instance;
 
+  // creating a user model based on firebase user
   User _fromfirebaseuser(FirebaseUser user) {
     return user != null ? User(uid: user.uid) : null;
   }
-  //sign in with email and password
 
-  //sign in anonymously
+  // Auth change stream
+  Stream<User> get user {
+    return _auth.onAuthStateChanged
+        .map((FirebaseUser user) => _fromfirebaseuser(user));
+  }
 
+  // sign in with email and password
+
+  // sign in anonymously
   Future SignInAnon() async {
     try {
       AuthResult result = await _auth.signInAnonymously();
@@ -24,7 +31,7 @@ class AuthService {
     }
   }
 
-  //register with email and password
-  //signout
+  // register with email and password
+  // signout
 
 }
