@@ -1,8 +1,8 @@
-# sreevaidyanatham
+# Sreevaidyanatham
 
 A booking app for Sreevaidyanatham Ayurveda Hospital
 
-## Getting Started
+## Getting Started with Flutter
 
 This project is a starting point for a Flutter application.
 
