@@ -8,6 +8,11 @@ class Signin extends StatefulWidget {
 
 class _SigninState extends State<Signin> {
   final AuthService _auth = AuthService();
+
+  // TextField setup
+  String email = '';
+  String password = '';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +60,9 @@ class _SigninState extends State<Signin> {
                       height: 20,
                     ),
                     TextField(
+                      onChanged: (value) {
+                        setState(() => email = value);
+                      },
                       decoration: InputDecoration(
                         labelText: "Email",
                         labelStyle: TextStyle(
@@ -66,6 +74,9 @@ class _SigninState extends State<Signin> {
                       height: 20,
                     ),
                     TextField(
+                      onChanged: (value) {
+                        setState(() => password = value);
+                      },
                       obscureText: true,
                       decoration: InputDecoration(
                         labelText: "Password",
@@ -90,7 +101,7 @@ class _SigninState extends State<Signin> {
                                 TextStyle(fontSize: 20.0, color: Colors.white),
                           ),
                         ),
-                        onTap: () {},
+                        onTap: () async {},
                       ),
                     ),
                     SizedBox(
