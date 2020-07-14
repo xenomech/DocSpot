@@ -1,4 +1,4 @@
 class User {
-  final String Uid;
-  User({this.Uid});
+  final String uid;
+  User({this.uid});
 }
