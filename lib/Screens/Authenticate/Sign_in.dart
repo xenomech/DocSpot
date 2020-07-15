@@ -52,7 +52,7 @@ class _SigninState extends State<Signin> {
                   children: <Widget>[
                     SizedBox(height: 50),
                     Text(
-                      "Enter Email an Password to Login",
+                      "Enter Email and Password to Login",
                       style: TextStyle(
                           fontSize: 15.0, fontStyle: FontStyle.italic),
                     ),
