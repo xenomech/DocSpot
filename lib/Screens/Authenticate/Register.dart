@@ -82,7 +82,7 @@ class _RegisterState extends State<Register> {
                     InkWell(
                       borderRadius: BorderRadius.circular(30.0),
                       onTap: () {},
-                      child: Container(
+                      child: Ink(
                           height: 50,
                           width: 250,
                           decoration: BoxDecoration(
@@ -114,7 +114,7 @@ class _RegisterState extends State<Register> {
                         onTap: () {
                           Navigator.pop(context);
                         },
-                        child: Container(
+                        child: Ink(
                           height: 50,
                           width: 250,
                           decoration: BoxDecoration(

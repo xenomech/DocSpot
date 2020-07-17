@@ -124,7 +124,7 @@ class _SigninState extends State<Signin> {
                           MaterialPageRoute(builder: (context) => Register()),
                         );
                       },
-                      child: Container(
+                      child: Ink(
                           height: 50,
                           width: 250,
                           decoration: BoxDecoration(
