@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sreevaidyanatham/Screens/Authenticate/Register.dart';
 import 'package:sreevaidyanatham/Services/auth.dart';
 
 class Signin extends StatefulWidget {
@@ -86,24 +87,24 @@ class _SigninState extends State<Signin> {
                       ),
                     ),
                     SizedBox(height: 30.0),
-                    Container(
-                      height: 50,
-                      width: 250,
-                      decoration: BoxDecoration(
+                    InkWell(
                         borderRadius: BorderRadius.circular(30.0),
-                        color: Colors.green,
-                      ),
-                      child: GestureDetector(
-                        child: Center(
-                          child: Text(
-                            "Login",
-                            style:
-                                TextStyle(fontSize: 20.0, color: Colors.white),
+                        onTap: () {},
+                        child: Ink(
+                          height: 50,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.0),
+                            color: Colors.green,
                           ),
-                        ),
-                        onTap: () async {},
-                      ),
-                    ),
+                          child: Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
+                            ),
+                          ),
+                        )),
                     SizedBox(
                       height: 20,
                     ),
@@ -115,24 +116,29 @@ class _SigninState extends State<Signin> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: 50,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0),
-                        // color: Colors.white,
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: GestureDetector(
-                        child: Center(
-                          child: Text(
-                            "Register Now",
-                            style:
-                                TextStyle(fontSize: 20.0, color: Colors.green),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(30.0),
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Register()),
+                        );
+                      },
+                      child: Container(
+                          height: 50,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.0),
+                            // color: Colors.white,
+                            border: Border.all(color: Colors.grey),
                           ),
-                        ),
-                        onTap: () {},
-                      ),
+                          child: Center(
+                            child: Text(
+                              "Register",
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.green),
+                            ),
+                          )),
                     )
                   ],
                 ),

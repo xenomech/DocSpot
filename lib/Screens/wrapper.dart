@@ -3,6 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:sreevaidyanatham/Models/user.dart';
 import 'package:sreevaidyanatham/Screens/Authenticate/Authenticate.dart';
 import 'package:sreevaidyanatham/Screens/Authenticate/Register.dart';
+import 'package:sreevaidyanatham/Screens/Authenticate/Sign_in.dart';
 import 'package:sreevaidyanatham/Screens/Home/Home.dart';
 
 class Wrapper extends StatelessWidget {
@@ -12,7 +13,7 @@ class Wrapper extends StatelessWidget {
     //return wether home or authenticate!
     // return Authenticate();
     if (user == null) {
-      return Register();
+      return Signin();
     } else {
       return Home();
     }

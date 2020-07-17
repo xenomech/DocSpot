@@ -19,9 +19,16 @@ class _RegisterState extends State<Register> {
         child: Column(
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.only(top: 100.0, left: 30.0),
+              padding: const EdgeInsets.only(top: 100.0, left: 10.0),
               child: Row(
                 children: <Widget>[
+                  FlatButton.icon(
+                    icon: Icon(Icons.arrow_back),
+                    label: Text(""),
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                  ),
                   Text(
                     "Hey There !",
                     style:
@@ -72,24 +79,24 @@ class _RegisterState extends State<Register> {
                       ),
                     ),
                     SizedBox(height: 30.0),
-                    Container(
-                      height: 50,
-                      width: 250,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(30.0),
-                        // color: Colors.white,
-                        border: Border.all(color: Colors.grey),
-                      ),
-                      child: GestureDetector(
-                        child: Center(
-                          child: Text(
-                            "Register",
-                            style:
-                                TextStyle(fontSize: 20.0, color: Colors.green),
+                    InkWell(
+                      borderRadius: BorderRadius.circular(30.0),
+                      onTap: () {},
+                      child: Container(
+                          height: 50,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.0),
+                            // color: Colors.white,
+                            border: Border.all(color: Colors.grey),
                           ),
-                        ),
-                        onTap: () async {},
-                      ),
+                          child: Center(
+                            child: Text(
+                              "Register",
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.green),
+                            ),
+                          )),
                     ),
                     SizedBox(
                       height: 20,
@@ -102,24 +109,26 @@ class _RegisterState extends State<Register> {
                     SizedBox(
                       height: 20,
                     ),
-                    Container(
-                      height: 50,
-                      width: 250,
-                      decoration: BoxDecoration(
+                    InkWell(
                         borderRadius: BorderRadius.circular(30.0),
-                        color: Colors.green,
-                      ),
-                      child: GestureDetector(
-                        child: Center(
-                          child: Text(
-                            "Login",
-                            style:
-                                TextStyle(fontSize: 20.0, color: Colors.white),
+                        onTap: () {
+                          Navigator.pop(context);
+                        },
+                        child: Container(
+                          height: 50,
+                          width: 250,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(30.0),
+                            color: Colors.green,
                           ),
-                        ),
-                        onTap: () {},
-                      ),
-                    )
+                          child: Center(
+                            child: Text(
+                              "Login",
+                              style: TextStyle(
+                                  fontSize: 20.0, color: Colors.white),
+                            ),
+                          ),
+                        )),
                   ],
                 ),
               ),
