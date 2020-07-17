@@ -119,10 +119,7 @@ class _SigninState extends State<Signin> {
                     InkWell(
                       borderRadius: BorderRadius.circular(30.0),
                       onTap: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(builder: (context) => Register()),
-                        );
+                        Navigator.of(context).push(_createRoute());
                       },
                       child: Ink(
                           height: 50,
@@ -149,4 +146,22 @@ class _SigninState extends State<Signin> {
       ),
     );
   }
+}
+
+Route _createRoute() {
+  return PageRouteBuilder(
+    pageBuilder: (context, animation, secondaryAnimation) => Register(),
+    transitionsBuilder: (context, animation, secondaryAnimation, child) {
+      var begin = Offset(0.0, 0.5);
+      var end = Offset.zero;
+      var curve = Curves.easeOut;
+
+      var tween = Tween(begin: begin, end: end).chain(CurveTween(curve: curve));
+
+      return SlideTransition(
+        position: animation.drive(tween),
+        child: child,
+      );
+    },
+  );
 }
