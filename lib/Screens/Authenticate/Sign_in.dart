@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:sreevaidyanatham/Screens/Authenticate/Register.dart';
+// import 'package:sreevaidyanatham/Screens/Authenticate/Register.dart';
 import 'package:sreevaidyanatham/Services/auth.dart';
 
 class Signin extends StatefulWidget {
@@ -9,6 +10,7 @@ class Signin extends StatefulWidget {
 
 class _SigninState extends State<Signin> {
   final AuthService _auth = AuthService();
+  final _formKey = GlobalKey<FormState>();
 
   // TextField setup
   String email = '';
@@ -72,41 +74,54 @@ class _SigninState extends State<Signin> {
                               color: Colors.grey.shade400)
                         ],
                       ),
-                      child: Column(
-                        children: <Widget>[
-                          TextField(
-                            onChanged: (value) {
-                              setState(() => email = value);
-                            },
-                            decoration: InputDecoration(
-                              labelText: "Email",
-                              labelStyle: TextStyle(
-                                fontSize: 15.0,
+                      child: Form(
+                        key: _formKey,
+                        child: Column(
+                          children: <Widget>[
+                            TextFormField(
+                              validator: (value) => value.contains('.com')
+                                  ? null
+                                  : 'Pls provide a valid E-Mail',
+                              onChanged: (value) {
+                                setState(() => email = value);
+                              },
+                              decoration: InputDecoration(
+                                labelText: "Email",
+                                labelStyle: TextStyle(
+                                  fontSize: 15.0,
+                                ),
                               ),
                             ),
-                          ),
-                          SizedBox(
-                            height: 20,
-                          ),
-                          TextField(
-                            onChanged: (value) {
-                              setState(() => password = value);
-                            },
-                            obscureText: true,
-                            decoration: InputDecoration(
-                              labelText: "Password",
-                              labelStyle: TextStyle(
-                                fontSize: 15.0,
+                            SizedBox(
+                              height: 20,
+                            ),
+                            TextFormField(
+                              validator: (value) => value.length > 8
+                                  ? null
+                                  : 'Password must be more than 8 charachters',
+                              onChanged: (value) {
+                                setState(() => password = value);
+                              },
+                              obscureText: true,
+                              decoration: InputDecoration(
+                                labelText: "Password",
+                                labelStyle: TextStyle(
+                                  fontSize: 15.0,
+                                ),
                               ),
                             ),
-                          ),
-                        ],
+                          ],
+                        ),
                       ),
                     ),
                     SizedBox(height: 30.0),
                     InkWell(
                         borderRadius: BorderRadius.circular(30.0),
-                        onTap: () {},
+                        onTap: () {
+                          if (_formKey.currentState.validate()) {
+                            print(email);
+                          }
+                        },
                         child: Ink(
                           height: 50,
                           width: 250,
@@ -141,7 +156,12 @@ class _SigninState extends State<Signin> {
                     ),
                     InkWell(
                       borderRadius: BorderRadius.circular(30.0),
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => Register()),
+                        );
+                      },
                       child: Ink(
                           height: 50,
                           width: 250,
