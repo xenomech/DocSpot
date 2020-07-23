@@ -117,9 +117,11 @@ class _SigninState extends State<Signin> {
                     SizedBox(height: 30.0),
                     InkWell(
                         borderRadius: BorderRadius.circular(30.0),
-                        onTap: () {
+                        onTap: () async {
                           if (_formKey.currentState.validate()) {
-                            print(email);
+                            dynamic result = await _auth
+                                .signinwithEmailandPassword(email, password);
+                            if (result == null) {}
                           }
                         },
                         child: Ink(

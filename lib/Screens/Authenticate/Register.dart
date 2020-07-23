@@ -28,8 +28,9 @@ class _RegisterState extends State<Register> {
               child: Row(
                 children: <Widget>[
                   FlatButton.icon(
+                    shape: CircleBorder(),
                     icon: Icon(Icons.arrow_back),
-                    label: Text(""),
+                    label: Text(''),
                     onPressed: () {
                       Navigator.pop(context);
                     },
