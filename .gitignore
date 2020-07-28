@@ -46,3 +46,4 @@ app.*.map.json
 # the google services .json
 
 **/android/app/google-services.json
+!.idea/

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config />
+    </shared>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="94c928f9-707f-457f-abf9-b652c43a3e69" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Images/logo.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" beforeDir="false" afterPath="$PROJECT_DIR$/android/app/src/main/res/drawable/launch_background.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="ca674e9b5b81" />
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1edW2UuTOxcjtRAJ7uQRL5CKvVX" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DEBUGGABLE_DEVICE" value="xiaomi-pixel_4-ca674e9b5b81" />
+    <property name="DEBUGGABLE_PROCESS" value="com.xenomech.sreevaidyanatham" />
+    <property name="DEBUGGER_ID" value="Java" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHOW_ALL_PROCESSES" value="false" />
+    <property name="dart.analysis.tool.window.force.activate" value="false" />
+    <property name="last_opened_file_path" value="C:/tools/dart-sdk/bin" />
+    <property name="settings.editor.selected.configurable" value="flutter.settings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="94c928f9-707f-457f-abf9-b652c43a3e69" name="Default Changelist" comment="" />
+      <created>1594651743149</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1594651743149</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1595937325864">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="175" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595937325864" />
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1595936410653">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="640" y="256" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595936410653" />
+    <state x="815" y="285" key="AndroidProcessChooserDialog" timestamp="1595937378022">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="815" y="285" key="AndroidProcessChooserDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595937378022" />
+    <state x="993" y="297" key="FileChooserDialogImpl" timestamp="1595937357562">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="993" y="297" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1595937357562" />
+    <state width="938" height="347" key="GridCell.Tab.0.bottom" timestamp="1595937384872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="347" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1595937384872" />
+    <state width="938" height="347" key="GridCell.Tab.0.center" timestamp="1595937384872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="347" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1595937384872" />
+    <state width="938" height="347" key="GridCell.Tab.0.left" timestamp="1595937384872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="347" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1595937384872" />
+    <state width="938" height="347" key="GridCell.Tab.0.right" timestamp="1595937384872">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="938" height="347" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1595937384872" />
+    <state x="461" y="162" key="SettingsEditor" timestamp="1595937450538">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="461" y="162" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1595937450538" />
+    <state x="100" y="100" width="1720" height="840" key="com.android.tools.idea.avdmanager.AvdListDialog" timestamp="1595936364605">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="100" y="100" width="1720" height="840" key="com.android.tools.idea.avdmanager.AvdListDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595936364605" />
+    <state x="1117" y="339" key="com.intellij.ide.util.TipDialog" timestamp="1595936161738">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="1117" y="339" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1595936161738" />
+    <state x="1117" y="350" key="com.intellij.ide.util.TipDialog/0.27.1920.991@0.27.1920.991" timestamp="1594694551077" />
+  </component>
+</project>
