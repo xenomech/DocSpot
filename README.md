@@ -1,6 +1,32 @@
 # Sreevaidyanatham
 
-A booking app for Sreevaidyanatham Ayurveda Hospital
+A booking app for Sreevaidyanatham Ayurveda Hospital.
+
+JSON Endpoint for future reference :
+```json
+        {
+            bookings : {
+                uida_of_the_user (1) :{
+                    name : _________ ,
+                    date : _________ ,
+                    time : _________ ,
+                    record_id : _______ , 
+
+                },
+                .
+                .
+                .
+                .
+                .
+                .
+                uida_of_the_user (n) :{
+                    name : _________ ,
+                    date : _________ ,
+                    time : _________ ,
+                    record_id : _______ , 
+            }
+        }
+```
 
 ## Getting Started with Flutter
 
