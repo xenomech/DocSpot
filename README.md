@@ -6,12 +6,15 @@ JSON Endpoint for future reference :
 ```json
         {
             bookings : {
-                uida_of_the_user (1) :{
+                no_of_bookings : {
+                    total_of_bookings : int
+                },
+                uid_of_the_user (1) :{
+                    booking_no : [___,___,.........],
                     name : _________ ,
-                    date : _________ ,
-                    time : _________ ,
+                    date : [___,___,.........]
+                    time : [___,___,.........]
                     record_id : _______ , 
-
                 },
                 .
                 .
@@ -19,10 +22,11 @@ JSON Endpoint for future reference :
                 .
                 .
                 .
-                uida_of_the_user (n) :{
+                uid_of_the_user (n) :{
+                    booking_no : [___,___,.........],
                     name : _________ ,
-                    date : _________ ,
-                    time : _________ ,
+                    date : [___,___,.........],
+                    time : [___,___,.........] ,
                     record_id : _______ , 
             }
         }
