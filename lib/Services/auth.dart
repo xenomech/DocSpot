@@ -7,7 +7,7 @@ class AuthService {
 
   // creating a user model based on firebase user
   User _fromfirebaseuser(FirebaseUser user) {
-    return user != null ? User(uid: user.uid, name: user.displayName) : null;
+    return user != null ? User(uid: user.uid) : null;
   }
 
   // Auth change stream
@@ -53,8 +53,11 @@ class AuthService {
         password: password,
       );
       FirebaseUser user = result.user;
+
       //create a document for the new user
-      await DatabaseService(uid: user.uid).updateUserData([], 'name', [], []);
+      await DatabaseService(uid: user.uid)
+          .updateUserData([null], 'name', [null], [null]);
+
       return _fromfirebaseuser(user);
     } catch (e) {
       print(e.toString());

@@ -8,6 +8,7 @@ class DatabaseService {
 
   final CollectionReference bookingCollection =
       Firestore.instance.collection("Bookings");
+
   Future updateUserData(
       List bookings, String name, List time, List date) async {
     return await bookingCollection.document(uid).setData(
