@@ -31,7 +31,7 @@ class AuthService {
   }
 
   // sign in anonymously
-  Future SignInAnon() async {
+  Future signInAnon() async {
     try {
       AuthResult result = await _auth.signInAnonymously();
       // print(result.toString());
@@ -66,7 +66,7 @@ class AuthService {
   }
 
   // signout
-  Future Signout() async {
+  Future signout() async {
     try {
       return await _auth.signOut();
     } catch (e) {

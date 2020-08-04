@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import 'package:sreevaidyanatham/Models/user.dart';
 import 'package:sreevaidyanatham/Screens/wrapper.dart';
 import 'package:sreevaidyanatham/Services/auth.dart';
-import 'package:sreevaidyanatham/Shared/loading_widget.dart';
 
 void main() => runApp(MyApp());
 
