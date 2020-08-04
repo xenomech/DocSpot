@@ -14,20 +14,34 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: <Widget>[
-        SizedBox(
-          height: 30,
+        appBar: new AppBar(
+          title: Text("Hi there !"),
+          elevation: 0,
+          backgroundColor: Colors.white,
+          actions: <Widget>[
+            IconButton(
+              icon: Icon(Icons.account_circle),
+              onPressed: () {
+                _auth.signout();
+              },
+            )
+          ],
         ),
-        Text(_bookedtime),
-        RaisedButton(
-          onPressed: () {
-            showTimePicker(context: context, initialTime: TimeOfDay.now()).then(
-                (value) => {setState(() => _bookedtime = value.toString())});
-          },
-        )
-      ],
-    ));
+        body: Column(
+          children: <Widget>[
+            SizedBox(
+              height: 30,
+            ),
+            Text(_bookedtime),
+            RaisedButton(
+              onPressed: () {
+                showTimePicker(context: context, initialTime: TimeOfDay.now())
+                    .then((value) =>
+                        {setState(() => _bookedtime = value.toString())});
+              },
+            )
+          ],
+        ));
   }
 }
 
