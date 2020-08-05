@@ -22,7 +22,7 @@ class _HomeState extends State<Home> {
       child: Scaffold(
         body: SingleChildScrollView(
           child: Center(
-            child: bookinglist(),
+            child: Bookinglist(),
           ),
         ),
       ),

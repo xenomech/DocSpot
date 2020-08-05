@@ -1,31 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:sreevaidyanatham/Models/bookings.dart';
-import 'package:sreevaidyanatham/Services/databasemgmt.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:sreevaidyanatham/Models/user.dart';
+// import 'package:sreevaidyanatham/Services/databasemgmt.dart';
+// import 'package:cloud_firestore/cloud_firestore.dart';
 
-class bookinglist extends StatefulWidget {
-  bookinglist({Key key}) : super(key: key);
+class Bookinglist extends StatefulWidget {
+  Bookinglist({Key key}) : super(key: key);
 
   @override
-  _bookinglistState createState() => _bookinglistState();
+  _BookinglistState createState() => _BookinglistState();
 }
 
-class _bookinglistState extends State<bookinglist> {
+class _BookinglistState extends State<Bookinglist> {
   @override
   Widget build(BuildContext context) {
     final bookings = Provider.of<List<Bookings>>(context);
+    final user = Provider.of<User>(context);
+    // print(user.uid);
     bookings.forEach((element) {
-      print("uid" + element.uid);
-      print("name" + element.name);
-      print("date");
-      print(element.date);
-      print("time");
-      print(element.time);
-      print("numberofbookings");
-      print(element.numberofbookings);
+      print(element.uid);
+      if (element.uid == user.uid) {
+        if (element.numberofbookings == null) {
+          return Stack(
+            children: <Widget>[
+              Container(
+                height: 40,
+                decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(30),
+                    color: Colors.lightGreen[100]),
+              ),
+              Text("No bookings yet!")
+            ],
+          );
+        }
+      }
     });
-
     return Container();
   }
 }
