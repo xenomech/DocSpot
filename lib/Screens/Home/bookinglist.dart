@@ -17,25 +17,7 @@ class _BookinglistState extends State<Bookinglist> {
   Widget build(BuildContext context) {
     final bookings = Provider.of<List<Bookings>>(context);
     final user = Provider.of<User>(context);
-    // print(user.uid);
-    bookings.forEach((element) {
-      print(element.uid);
-      if (element.uid == user.uid) {
-        if (element.numberofbookings == null) {
-          return Stack(
-            children: <Widget>[
-              Container(
-                height: 40,
-                decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: Colors.lightGreen[100]),
-              ),
-              Text("No bookings yet!")
-            ],
-          );
-        }
-      }
-    });
-    return Container();
+    return ListView.builder(itemCount:,)  //stuck machane!
+    
   }
 }
