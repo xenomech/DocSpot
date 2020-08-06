@@ -18,14 +18,11 @@ class _HomeState extends State<Home> {
     // final bookings = Provider.of<QuerySnapshot>(context);
     // print(bookings);
     return StreamProvider<List<Bookings>>.value(
-      value: DatabaseService().bookings,
-      child: Scaffold(
-        body: SingleChildScrollView(
-          child: Center(
+        value: DatabaseService().bookings,
+        child: Scaffold(
+          body: Center(
             child: Bookinglist(),
           ),
-        ),
-      ),
-    );
+        ));
   }
 }
