@@ -24,19 +24,6 @@ class DatabaseService {
     });
   }
 
-  // doc list from snapshot
-  // List<Bookings> _bookingdocsfromsnapshot(QuerySnapshot snapshot) {
-  //   return snapshot.documents.map((doc) {
-  //     return Bookings(
-  //       uid: doc.data['uid'] ?? '',
-  //       numberofbookings: doc.data['bookings'] ?? [null],
-  //       name: doc.data['name'] ?? '',
-  //       time: doc.data['time'] ?? [null],
-  //       date: doc.data['date'] ?? [null],
-  //     );
-  //   }).toList();
-  // }
-
   //to userdata
   Userdata _userdocsfromsnapshot(DocumentSnapshot snapshot) {
     return Userdata(
@@ -47,11 +34,6 @@ class DatabaseService {
       date: snapshot.data['date'],
     );
   }
-
-  //get the booking stream
-  // Stream<List<Bookings>> get bookings {
-  //   return bookingCollection.snapshots().map(_bookingdocsfromsnapshot);
-  // }
 
   //get the user data stream
   Stream<Userdata> get userdata {
