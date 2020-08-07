@@ -8,7 +8,7 @@ class Books extends StatelessWidget {
   Widget build(BuildContext context) {
     if (books == null) {
       return Padding(
-        padding: const EdgeInsets.only(top: 8.0),
+        padding: const EdgeInsets.only(top: 0.0),
         child: Card(
           margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
           child: ListTile(
@@ -23,7 +23,7 @@ class Books extends StatelessWidget {
           margin: EdgeInsets.fromLTRB(20.0, 6.0, 20.0, 0.0),
           child: ListTile(
               leading: CircleAvatar(
-                radius: 25.0,
+                radius: 30.0,
                 child: Text("$books"),
               ),
               title: Text("")),

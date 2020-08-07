@@ -49,6 +49,43 @@ class _HomeState extends State<Home> {
 
     final user = Provider.of<User>(context);
 
+    void _showappointmentpanel() {
+      final bookings = Provider.of<Userdata>(context);
+
+      String _name;
+      DateTime _date;
+
+      showModalBottomSheet(
+          context: context,
+          builder: (context) {
+            return SingleChildScrollView(
+              child: Form(
+                child: Column(
+                  children: <Widget>[
+                    TextFormField(
+                      initialValue: bookings.name,
+                      onChanged: (value) => _name = value,
+                    ),
+                    // TextFormField(
+                    //   onTap: () {
+                    //     showDatePicker(
+                    //             context: context,
+                    //             initialDate: DateTime.now(),
+                    //             firstDate: DateTime.now(),
+                    //             lastDate: DateTime(2021))
+                    //         .then((value) => _date = value);
+                    //   },
+                    //   initialValue: _date.toString(),
+                    // ),
+                    Text("$_name"),
+                    Text(_date.toString()),
+                  ],
+                ),
+              ),
+            );
+          });
+    }
+
     return StreamProvider<Userdata>.value(
       value: DatabaseService(uid: user.uid).userdata,
       child: Scaffold(
@@ -82,7 +119,14 @@ class _HomeState extends State<Home> {
             SizedBox(
               height: 30,
             ),
-            Bookinglist(),
+            Container(
+              height: 300,
+              child: Bookinglist(),
+            ),
+            RaisedButton(
+              child: Text("tryout"),
+              onPressed: () => _showappointmentpanel(),
+            )
           ],
         ),
       ),

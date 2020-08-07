@@ -13,6 +13,7 @@ class _BookinglistState extends State<Bookinglist> {
   @override
   Widget build(BuildContext context) {
     bool loading = true;
+    bool isempty = true;
 
     final bookings = Provider.of<Userdata>(context);
     final user = Provider.of<User>(context);
@@ -21,35 +22,35 @@ class _BookinglistState extends State<Bookinglist> {
       if (bookings.uid == user.uid) {
         print(bookings);
         setState(() {
-          setState(() => loading = false);
+          setState(() {
+            isempty = bookings.numberofbookings.isEmpty;
+            loading = false;
+          });
         });
       }
     } catch (e) {
       print(e);
     }
-    if (bookings.numberofbookings.isEmpty) {
+    if (isempty) {
       return loading
           ? Loading()
-          : new Expanded(
-              child: ListView.builder(
-                itemCount: 1,
-                itemBuilder: (BuildContext context, int index) {
-                  return Books(
-                    books: null,
-                  );
-                },
-              ),
+          : ListView.builder(
+              itemCount: 1,
+              itemBuilder: (BuildContext context, int index) {
+                return Books(
+                  books: null,
+                );
+              },
             );
     } else {
       return loading
           ? Loading()
-          : new Expanded(
-              child: ListView.builder(
+          : ListView.builder(
               itemCount: bookings.numberofbookings.length,
               itemBuilder: (BuildContext context, int index) {
                 return Books(books: bookings.numberofbookings[index]);
               },
-            ));
+            );
     }
   }
 }
