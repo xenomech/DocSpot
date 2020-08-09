@@ -15,6 +15,34 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    final user = Provider.of<User>(context);
+    void _showapointmentpanel() {
+      String _name;
+      DateTime _date;
+
+      showModalBottomSheet(
+          elevation: 5,
+          context: context,
+          builder: (context) {
+            return Container(
+              height: 1000,
+              child: StreamBuilder<Userdata>(
+                  stream: DatabaseService(uid: user.uid).userdata,
+                  builder: (context, snapshot) {
+                    return Form(
+                      child: Column(
+                        children: <Widget>[
+                          TextFormField(onChanged: (value) => _name = value),
+                          Text("$_name"),
+                          Text(_date.toString()),
+                        ],
+                      ),
+                    );
+                  }),
+            );
+          });
+    }
+
     void _showuserspanel() {
       showModalBottomSheet(
           context: context,
@@ -42,45 +70,6 @@ class _HomeState extends State<Home> {
                       icon: Icon(Icons.exit_to_app),
                       label: Text("Sign out"))
                 ],
-              ),
-            );
-          });
-    }
-
-    final user = Provider.of<User>(context);
-
-    void _showappointmentpanel() {
-      final bookings = Provider.of<Userdata>(context);
-
-      String _name;
-      DateTime _date;
-
-      showModalBottomSheet(
-          context: context,
-          builder: (context) {
-            return SingleChildScrollView(
-              child: Form(
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      initialValue: bookings.name,
-                      onChanged: (value) => _name = value,
-                    ),
-                    // TextFormField(
-                    //   onTap: () {
-                    //     showDatePicker(
-                    //             context: context,
-                    //             initialDate: DateTime.now(),
-                    //             firstDate: DateTime.now(),
-                    //             lastDate: DateTime(2021))
-                    //         .then((value) => _date = value);
-                    //   },
-                    //   initialValue: _date.toString(),
-                    // ),
-                    Text("$_name"),
-                    Text(_date.toString()),
-                  ],
-                ),
               ),
             );
           });
@@ -117,15 +106,29 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(
-              height: 30,
+              height: 40,
             ),
-            Container(
-              height: 300,
-              child: Bookinglist(),
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.only(right: 175.0),
+                  child: Text(
+                    "Your Bookings :",
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontStyle: FontStyle.italic,
+                        fontWeight: FontWeight.bold),
+                  ),
+                ),
+                Container(
+                  height: 400,
+                  child: Bookinglist(),
+                ),
+              ],
             ),
             RaisedButton(
               child: Text("tryout"),
-              onPressed: () => _showappointmentpanel(),
+              onPressed: () => _showapointmentpanel(),
             )
           ],
         ),

@@ -12,12 +12,13 @@ class DatabaseService {
 
   // final DocumentReference userdocument = Firestore.instance.document();
 
-  Future updateUserData(
-      List numberofbookings, String name, List time, List date) async {
+  Future updateUserData(List numberofbookings, String name, List doctor,
+      List time, List date) async {
     return await bookingCollection.document(uid).setData({
       'uid': uid,
       'bookings': numberofbookings,
       'name': name,
+      'doctor': doctor,
       'time': time,
       'date': date
     });
@@ -29,6 +30,7 @@ class DatabaseService {
       uid: uid,
       numberofbookings: snapshot.data['bookings'],
       name: snapshot.data['name'],
+      doctor: snapshot.data['doctor'],
       time: snapshot.data['time'],
       date: snapshot.data['date'],
     );

@@ -48,7 +48,12 @@ class _BookinglistState extends State<Bookinglist> {
           : ListView.builder(
               itemCount: bookings.numberofbookings.length,
               itemBuilder: (BuildContext context, int index) {
-                return Books(books: bookings.numberofbookings[index]);
+                return Books(
+                  books: bookings.numberofbookings[index],
+                  doctor: bookings.doctor[index],
+                  time: bookings.time[index],
+                  date: bookings.date[index],
+                );
               },
             );
     }
