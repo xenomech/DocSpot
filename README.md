@@ -13,6 +13,7 @@ JSON Endpoint for future reference :
                     booking_no : [___,___,.........],
                     name : _________ ,
                     date : [___,___,.........]
+                    doctor : [___,___,.........]
                     time : [___,___,.........]
                     record_id : _______ , 
                 },
@@ -26,6 +27,7 @@ JSON Endpoint for future reference :
                     booking_no : [___,___,.........],
                     name : _________ ,
                     date : [___,___,.........],
+                    doctor : [___,___,.........]
                     time : [___,___,.........] ,
                     record_id : _______ , 
             }
