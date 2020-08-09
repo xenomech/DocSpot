@@ -88,17 +88,21 @@ class _HomeState extends State<Home> {
         body: Column(
           children: [
             Container(
-              height: height * .90,
+              height: height * .85,
               decoration: BoxDecoration(
-                  boxShadow: [
-                    BoxShadow(
-                        blurRadius: 20.0,
-                        // spreadRadius: 3.0,
-                        color: Colors.black)
-                  ],
-                  color: Colors.white,
-                  borderRadius:
-                      BorderRadius.only(bottomLeft: Radius.circular(50))),
+                boxShadow: [
+                  BoxShadow(
+                      blurRadius: 30.0,
+                      // spreadRadius: 3.0,
+                      color: Colors.black)
+                ],
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(60),
+                    bottomRight: Radius.circular(10),
+                    topLeft: Radius.circular(10),
+                    topRight: Radius.circular(10)),
+              ),
               child: Column(
                 children: <Widget>[
                   Container(
@@ -107,7 +111,7 @@ class _HomeState extends State<Home> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: <Widget>[
                         Text(
-                          "Hi there !",
+                          "Hi there",
                           style: TextStyle(
                             fontSize: 40.0,
                             fontWeight: FontWeight.bold,
@@ -132,28 +136,75 @@ class _HomeState extends State<Home> {
                   Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.only(right: 175.0),
-                        child: Text(
-                          "Your Bookings :",
-                          style: TextStyle(
-                              fontSize: 20,
+                        padding: const EdgeInsets.only(right: 160.0),
+                        child: Container(
+                          padding: EdgeInsets.all(8),
+                          decoration: BoxDecoration(
+                            color: Colors.green,
+                            borderRadius: BorderRadius.circular(30),
+                            boxShadow: [
+                              BoxShadow(
+                                  blurRadius: 5.0,
+                                  spreadRadius: 3.0,
+                                  color: Colors.grey)
+                            ],
+                          ),
+                          child: Text(
+                            "Your Bookings :",
+                            style: TextStyle(
+                              fontSize: 18,
                               fontStyle: FontStyle.italic,
-                              fontWeight: FontWeight.bold),
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
                         ),
                       ),
                       Container(
-                        height: 400,
+                        height: 300,
                         child: Bookinglist(),
                       ),
                     ],
                   ),
-                  RaisedButton(
-                    child: Text("tryout"),
-                    onPressed: () => _showapointmentpanel(),
-                  )
                 ],
               ),
             ),
+            Padding(
+                padding: EdgeInsets.only(top: 30, left: 60, right: 60),
+                child: InkWell(
+                  borderRadius: BorderRadius.circular(50),
+                  onTap: () => _showapointmentpanel(),
+                  child: Ink(
+                    height: 50,
+                    decoration: BoxDecoration(
+                      boxShadow: [
+                        BoxShadow(
+                            blurRadius: 10.0,
+                            // spreadRadius: 5.0,
+                            color: Colors.black)
+                      ],
+                      borderRadius: BorderRadius.circular(30.0),
+                    ),
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(30.0)),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            "Book now !     ",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                          ),
+                        ],
+                      ),
+                    ),
+                  ),
+                )),
           ],
         ),
       ),
